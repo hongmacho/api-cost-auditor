@@ -112,7 +112,7 @@ export async function getTotalCostByMonth(userId: string, month: string) {
 
   const result = await db
     .select({
-      total: sql`SUM(${apiCosts.cost})`,
+      total: sql<number>`COALESCE(SUM(${apiCosts.cost}), 0)`,
     })
     .from(apiCosts)
     .where(
@@ -122,7 +122,7 @@ export async function getTotalCostByMonth(userId: string, month: string) {
       )
     )
 
-  return result[0]?.total || 0
+  return Number(result[0]?.total ?? 0)
 }
 
 // Team Repository
@@ -184,7 +184,7 @@ export async function getTeamAPICost(teamId: string, month: string) {
 
   const result = await db
     .select({
-      total: sql`SUM(${apiCosts.cost})`,
+      total: sql<number>`COALESCE(SUM(${apiCosts.cost}), 0)`,
     })
     .from(apiCosts)
     .where(
@@ -194,7 +194,7 @@ export async function getTeamAPICost(teamId: string, month: string) {
       )
     )
 
-  return result[0]?.total || 0
+  return Number(result[0]?.total ?? 0)
 }
 
 // Alert Repository

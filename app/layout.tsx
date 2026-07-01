@@ -15,7 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'API 비용 분석 플랫폼',
   description: 'SaaS 회사의 API 비용을 한눈에 추적하고 분석하는 플랫폼',
-  lang: 'ko',
 }
 
 export default function RootLayout({

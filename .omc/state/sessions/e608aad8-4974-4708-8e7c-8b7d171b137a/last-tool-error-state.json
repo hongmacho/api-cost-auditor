@@ -1,0 +1,7 @@
+{
+  "tool_name": "Read",
+  "tool_input_preview": "{\"file_path\":\"/Users/hongpaul/develop/project-persnol/claude-auto-idea/projects/weekly-standups-ai/app\"}",
+  "error": "EISDIR: illegal operation on a directory, read '/Users/hongpaul/develop/project-persnol/claude-auto-idea/projects/weekly-standups-ai/app'",
+  "timestamp": "2026-07-01T18:57:07.130Z",
+  "retry_count": 1
+}

@@ -1,4 +1,4 @@
-import { sqliteTable, text, real, integer, datetime } from 'drizzle-orm/sqlite-core'
+import { sqliteTable, text, real, integer } from 'drizzle-orm/sqlite-core'
 import { relations } from 'drizzle-orm'
 
 export const users = sqliteTable('users', {
@@ -6,8 +6,8 @@ export const users = sqliteTable('users', {
   email: text('email').notNull().unique(),
   name: text('name'),
   currency: text('currency').default('USD'),
-  createdAt: datetime('created_at').default(new Date()),
-  updatedAt: datetime('updated_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const apis = sqliteTable('apis', {
@@ -17,8 +17,8 @@ export const apis = sqliteTable('apis', {
   provider: text('provider').notNull(),
   monthlyBudget: real('monthly_budget'),
   status: text('status').default('active'),
-  createdAt: datetime('created_at').default(new Date()),
-  updatedAt: datetime('updated_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const apiCosts = sqliteTable('api_costs', {
@@ -27,15 +27,15 @@ export const apiCosts = sqliteTable('api_costs', {
   month: text('month').notNull(),
   cost: real('cost').notNull(),
   usage: integer('usage'),
-  createdAt: datetime('created_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const teams = sqliteTable('teams', {
   id: text('id').primaryKey(),
   userId: text('user_id').notNull().references(() => users.id),
   name: text('name').notNull(),
-  createdAt: datetime('created_at').default(new Date()),
-  updatedAt: datetime('updated_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const teamAPIs = sqliteTable('team_apis', {
@@ -43,7 +43,7 @@ export const teamAPIs = sqliteTable('team_apis', {
   teamId: text('team_id').notNull().references(() => teams.id),
   apiId: text('api_id').notNull().references(() => apis.id),
   allocatedBudget: real('allocated_budget'),
-  createdAt: datetime('created_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const alerts = sqliteTable('alerts', {
@@ -53,17 +53,17 @@ export const alerts = sqliteTable('alerts', {
   threshold: real('threshold'),
   channel: text('channel').default('in-app'),
   isActive: integer('is_active', { mode: 'boolean' }).default(true),
-  createdAt: datetime('created_at').default(new Date()),
-  updatedAt: datetime('updated_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
+  updatedAt: integer('updated_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 export const alertHistories = sqliteTable('alert_histories', {
   id: text('id').primaryKey(),
   alertId: text('alert_id').notNull().references(() => alerts.id),
-  triggerDate: datetime('trigger_date').notNull(),
+  triggerDate: integer('trigger_date', { mode: 'timestamp' }).notNull(),
   message: text('message'),
   status: text('status').default('sent'),
-  createdAt: datetime('created_at').default(new Date()),
+  createdAt: integer('created_at', { mode: 'timestamp' }).$defaultFn(() => new Date()),
 })
 
 // Relations
