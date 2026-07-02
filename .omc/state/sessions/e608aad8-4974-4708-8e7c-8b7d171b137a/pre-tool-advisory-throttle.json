@@ -1,26 +1,18 @@
 {
   "version": 1,
   "entries": {
-    "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
-      "last_emitted_at_ms": 1782934513432,
-      "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
-    },
-    "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
-      "last_emitted_at_ms": 1782933429877,
-      "message": "Read multiple files in parallel when possible for faster analysis."
-    },
     "445ed27a3872b681d98190bae61ccb84954e1bc4e140df5370be958dee776b3a": {
-      "last_emitted_at_ms": 1782933335671,
+      "last_emitted_at_ms": 1782955444580,
       "message": "Verify changes work after editing. Test functionality before marking complete."
     },
-    "13a6f73f6008c693ea5177a01ed0da26487ef15ba96b5ac1b8d77ea6e1276d4e": {
-      "last_emitted_at_ms": 1782932204501,
-      "message": "Spawning agent: oh-my-claudecode:executor (sonnet) [BACKGROUND] | Task: 완성: weekly-standups-ai 구현"
+    "466399dafa2d20f60587180bad0a07358eb7f2bce724df0ff682f038ad33f5ad": {
+      "last_emitted_at_ms": 1782955440320,
+      "message": "Read multiple files in parallel when possible for faster analysis."
     },
-    "c1f08078a6ff3e6aa929fde949d35044f14e1c5bf844e986bf7acdff1320b21d": {
-      "last_emitted_at_ms": 1782932184281,
-      "message": "Spawning agent: oh-my-claudecode:executor (sonnet) [BACKGROUND] | Task: 수정: api-cost-auditor TS오류"
+    "79a93d4a2f8f50b95f852280616242fee1855dc99a3c75211917f55e72e95fae": {
+      "last_emitted_at_ms": 1782955352280,
+      "message": "Use parallel execution for independent tasks. Use run_in_background for long operations (npm install, builds, tests)."
     }
   },
-  "updated_at": "2026-07-01T19:35:13.432Z"
+  "updated_at": "2026-07-02T01:24:04.580Z"
 }

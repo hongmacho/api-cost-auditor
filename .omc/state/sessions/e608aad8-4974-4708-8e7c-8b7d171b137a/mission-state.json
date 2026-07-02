@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-01T18:56:46.260Z",
+  "updatedAt": "2026-07-01T20:02:04.439Z",
   "missions": [
     {
       "id": "session:e608aad8-4974-4708-8e7c-8b7d171b137a:none",
@@ -7,15 +7,15 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-07-01T18:56:24.620Z",
-      "updatedAt": "2026-07-01T18:56:46.260Z",
+      "updatedAt": "2026-07-01T20:02:04.439Z",
       "status": "running",
-      "workerCount": 2,
+      "workerCount": 4,
       "taskCounts": {
-        "total": 2,
+        "total": 4,
         "pending": 0,
         "blocked": 0,
-        "inProgress": 2,
-        "completed": 0,
+        "inProgress": 1,
+        "completed": 3,
         "failed": 0
       },
       "agents": [
@@ -23,11 +23,11 @@
           "name": "executor:a1d14f4",
           "role": "executor",
           "ownership": "a1d14f4d081bdea27",
-          "status": "running",
+          "status": "done",
           "currentStep": null,
-          "latestUpdate": null,
+          "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-07-01T18:56:24.620Z"
+          "updatedAt": "2026-07-01T19:50:09.584Z"
         },
         {
           "name": "executor:a10d036",
@@ -38,17 +38,29 @@
           "latestUpdate": null,
           "completedSummary": null,
           "updatedAt": "2026-07-01T18:56:46.260Z"
+        },
+        {
+          "name": "executor:a29f111",
+          "role": "executor",
+          "ownership": "a29f11119eb505a2c",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-07-01T19:57:22.163Z"
+        },
+        {
+          "name": "executor:ad87672",
+          "role": "executor",
+          "ownership": "ad876726e6e5bed99",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "completedSummary": "Marked as stale during unmatched stop reconciliation - exceed...",
+          "updatedAt": "2026-07-01T20:02:04.439Z"
         }
       ],
       "timeline": [
-        {
-          "id": "session-start:a1d14f4d081bdea27:2026-07-01T18:56:24.620Z",
-          "at": "2026-07-01T18:56:24.620Z",
-          "kind": "update",
-          "agent": "executor:a1d14f4",
-          "detail": "started executor:a1d14f4",
-          "sourceKey": "session-start:a1d14f4d081bdea27"
-        },
         {
           "id": "session-start:a10d0363891c3855d:2026-07-01T18:56:46.260Z",
           "at": "2026-07-01T18:56:46.260Z",
@@ -56,6 +68,54 @@
           "agent": "executor:a10d036",
           "detail": "started executor:a10d036",
           "sourceKey": "session-start:a10d0363891c3855d"
+        },
+        {
+          "id": "session-start:a29f11119eb505a2c:2026-07-01T19:37:20.441Z",
+          "at": "2026-07-01T19:37:20.441Z",
+          "kind": "update",
+          "agent": "executor:a29f111",
+          "detail": "started executor:a29f111",
+          "sourceKey": "session-start:a29f11119eb505a2c"
+        },
+        {
+          "id": "session-start:ad876726e6e5bed99:2026-07-01T19:37:44.745Z",
+          "at": "2026-07-01T19:37:44.745Z",
+          "kind": "update",
+          "agent": "executor:ad87672",
+          "detail": "started executor:ad87672",
+          "sourceKey": "session-start:ad876726e6e5bed99"
+        },
+        {
+          "id": "session-stop:aa0535fa676e690af:2026-07-01T19:49:42.073Z",
+          "at": "2026-07-01T19:49:42.073Z",
+          "kind": "completion",
+          "agent": "executor:a1d14f4",
+          "detail": "completed",
+          "sourceKey": "session-stop:aa0535fa676e690af"
+        },
+        {
+          "id": "session-stop:afcbf59c0ce6c35a6:2026-07-01T19:50:09.584Z",
+          "at": "2026-07-01T19:50:09.584Z",
+          "kind": "completion",
+          "agent": "executor:a1d14f4",
+          "detail": "completed",
+          "sourceKey": "session-stop:afcbf59c0ce6c35a6"
+        },
+        {
+          "id": "session-stop:a29f11119eb505a2c:2026-07-01T19:57:22.163Z",
+          "at": "2026-07-01T19:57:22.163Z",
+          "kind": "completion",
+          "agent": "executor:a29f111",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:a29f11119eb505a2c"
+        },
+        {
+          "id": "session-stop:ad876726e6e5bed99:2026-07-01T20:02:04.439Z",
+          "at": "2026-07-01T20:02:04.439Z",
+          "kind": "completion",
+          "agent": "executor:ad87672",
+          "detail": "Marked as stale during unmatched stop reconciliation - exceeded timeout",
+          "sourceKey": "session-stop:ad876726e6e5bed99"
         }
       ]
     }

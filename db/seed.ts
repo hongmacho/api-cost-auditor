@@ -6,7 +6,7 @@ export async function seedDatabase() {
   const db = getDb()
 
   // Create test user
-  const userId = uuid()
+  const userId = 'demo-user-1'
   db.insert(users).values({
     id: userId,
     email: 'demo@example.com',

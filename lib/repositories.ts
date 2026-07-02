@@ -8,7 +8,7 @@ import {
   alerts,
   alertHistories,
 } from '@/db/schema'
-import { eq, and, gte, lte, desc, asc, sql } from 'drizzle-orm'
+import { eq, and, gte, lte, desc, asc, sql, inArray } from 'drizzle-orm'
 
 // User Repository
 export async function getUserById(userId: string) {
@@ -87,7 +87,7 @@ export async function getAPICostsHistory(apiId: string, months: string[]) {
   return db.query.apiCosts.findMany({
     where: and(
       eq(apiCosts.apiId, apiId),
-      sql`${apiCosts.month} IN (${sql.join(months)})`
+      inArray(apiCosts.month, months)
     ),
   })
 }
@@ -117,7 +117,7 @@ export async function getTotalCostByMonth(userId: string, month: string) {
     .from(apiCosts)
     .where(
       and(
-        sql`${apiCosts.apiId} IN (${sql.join(apiIds)})`,
+        inArray(apiCosts.apiId, apiIds),
         eq(apiCosts.month, month)
       )
     )
@@ -189,7 +189,7 @@ export async function getTeamAPICost(teamId: string, month: string) {
     .from(apiCosts)
     .where(
       and(
-        sql`${apiCosts.apiId} IN (${sql.join(apiIds)})`,
+        inArray(apiCosts.apiId, apiIds),
         eq(apiCosts.month, month)
       )
     )
