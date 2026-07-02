@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /Users/hongpaul/develop/project-persnol/claude-auto-idea/projects/data-lineage-tracker && for f in lib/db.ts lib/seed.ts lib/repositories/*.ts; do\\n  sed -i '1,3s/\\\"use server\\\";//' \\\"$...",
-  "error": "Exit code 1\nsed: 1: \"lib/db.ts\n\": extra characters at the end of l command\nsed: 1: \"lib/seed.ts\n\": extra characters at the end of l command\nsed: 1: \"lib/repositories/Change ...\": extra characters at the end of l command\nsed: 1: \"lib/repositories/Column ...\": extra characters at the end of l command\nsed: 1: \"lib/repositories/Datase ...\": extra characters at the end of l command\nsed: 1: \"lib/repositories/Lineag ...\": extra characters at the end of l command",
-  "timestamp": "2026-07-01T19:54:28.994Z",
-  "retry_count": 1
-}
